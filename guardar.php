@@ -15,6 +15,11 @@ if ($nombre === '' || $cantidad === '') {
     exit;
 }
 
+if (mb_strlen($nombre, 'UTF-8') < 3) {
+    header('Location: index.php?estado=nombre_invalido');
+    exit;
+}
+
 if (!is_numeric($cantidad)) {
     header('Location: index.php?estado=cantidad_invalida');
     exit;
