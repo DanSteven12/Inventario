@@ -25,6 +25,14 @@ if (!is_numeric($cantidad)) {
     exit;
 }
 
+$cantidadInt = (int) $cantidad;
+
+// Validar que la cantidad sea estrictamente mayor a 0
+if ($cantidadInt <= 0) {
+    header('Location: index.php?estado=cantidad_invalida');
+    exit;
+}
+
 $sentencia = $conexion->prepare(
     'INSERT INTO productos (nombre, cantidad)
      VALUES (:nombre, :cantidad)'
@@ -32,7 +40,7 @@ $sentencia = $conexion->prepare(
 
 $sentencia->execute([
     'nombre' => $nombre,
-    'cantidad' => (int) $cantidad
+    'cantidad' => $cantidadInt
 ]);
 
 header('Location: index.php?estado=guardado');

@@ -73,7 +73,7 @@ $estado = $_GET['estado'] ?? '';
 
             <?php if ($estado === 'cantidad_invalida'): ?>
                 <div class="mensaje error">
-                    La cantidad debe ser un número.
+                    La cantidad debe ser un número entero mayor a 0.
                 </div>
             <?php endif; ?>
 
@@ -103,6 +103,7 @@ $estado = $_GET['estado'] ?? '';
                         type="number"
                         id="cantidad"
                         name="cantidad"
+                        min="1"
                         placeholder="Ejemplo: 10"
                         required
                     >
