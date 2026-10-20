@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../funciones.php';
 
-echo "<h3>Pruebas de validarNombre()</h3>";
+echo "=== Pruebas de validarNombre() ===" . PHP_EOL;
 
 $casosNombre = [
     ["Teclado", true],
@@ -19,25 +19,25 @@ foreach ($casosNombre as [$entrada, $esperado]) {
     
     if ($resultado === $esperado) {
         $aceptadas++;
-        echo "Prueba de nombre $textoEntrada pasó.<br>\n";
+        echo "Prueba de nombre $textoEntrada pasó." . PHP_EOL;
     } else {
         $rechazadas++;
-        echo "Prueba de nombre $textoEntrada falló. Resultado esperado: " . ($esperado ? 'true' : 'false') . ", resultado obtenido: " . ($resultado ? 'true' : 'false') . "<br>\n";
+        echo "Prueba de nombre $textoEntrada falló. Resultado esperado: " . ($esperado ? 'true' : 'false') . ", resultado obtenido: " . ($resultado ? 'true' : 'false') . PHP_EOL;
     }
 }
 
-echo "<br>";
-echo "<strong>Resumen de validación de nombres:</strong><br>\n";
-echo "Aceptadas: $aceptadas<br>\n";
-echo "Rechazadas: $rechazadas<br>\n";
-echo "Total evaluados: " . ($aceptadas + $rechazadas) . "<br>\n";
+echo PHP_EOL;
+echo "Resumen de validación de nombres:" . PHP_EOL;
+echo "Aceptadas: $aceptadas" . PHP_EOL;
+echo "Rechazadas: $rechazadas" . PHP_EOL;
+echo "Total evaluados: " . ($aceptadas + $rechazadas) . PHP_EOL;
 
-echo "<br>";
+echo PHP_EOL;
 
 // ==========================================
 // PRUEBAS DE VALIDACIÓN DE CANTIDAD
 // ==========================================
-echo "<h3>Pruebas de validarCantidad()</h3>";
+echo "=== Pruebas de validarCantidad() ===" . PHP_EOL;
 
 $casosCantidad = [
     [10, true],  
@@ -54,28 +54,25 @@ foreach ($casosCantidad as [$entrada, $esperado]) {
     
     if ($resultado === $esperado) {
         $aceptadasCantidad++;
-        echo "Prueba de cantidad '$entrada' pasó.<br>\n";
+        echo "Prueba de cantidad '$entrada' pasó." . PHP_EOL;
     } else {
         $rechazadasCantidad++;
-        echo "Prueba de cantidad '$entrada' falló. Resultado esperado: " . ($esperado ? 'true' : 'false') . ", resultado obtenido: " . ($resultado ? 'true' : 'false') . "<br>\n";
+        echo "Prueba de cantidad '$entrada' falló. Resultado esperado: " . ($esperado ? 'true' : 'false') . ", resultado obtenido: " . ($resultado ? 'true' : 'false') . PHP_EOL;
     }
 }
 
-echo "<br>";
-echo "<strong>Resumen de validación de cantidades:</strong><br>\n";
-echo "Aceptadas: $aceptadasCantidad<br>\n";
-echo "Rechazadas: $rechazadasCantidad<br>\n";
-echo "Total evaluados: " . ($aceptadasCantidad + $rechazadasCantidad) . "<br>\n";
+echo PHP_EOL;
+echo "Resumen de validación de cantidades:" . PHP_EOL;
+echo "Aceptadas: $aceptadasCantidad" . PHP_EOL;
+echo "Rechazadas: $rechazadasCantidad" . PHP_EOL;
+echo "Total evaluados: " . ($aceptadasCantidad + $rechazadasCantidad) . PHP_EOL;
 
-echo "<br>";
+echo PHP_EOL;
 $totalAceptadas = $aceptadas + $aceptadasCantidad;
 $totalRechazadas = $rechazadas + $rechazadasCantidad;
 $totalGeneral = $totalAceptadas + $totalRechazadas;
 
-echo "<strong>Resumen Total de Pruebas:</strong><br>\n";
-echo "Total aceptadas: $totalAceptadas<br>\n";
-echo "Total rechazadas: $totalRechazadas<br>\n";
-echo "Total general evaluados: $totalGeneral<br>\n";
-
-
-
+echo "Resumen Total de Pruebas:" . PHP_EOL;
+echo "Total aceptadas: $totalAceptadas" . PHP_EOL;
+echo "Total rechazadas: $totalRechazadas" . PHP_EOL;
+echo "Total general evaluados: $totalGeneral" . PHP_EOL;
